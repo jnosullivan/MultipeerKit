@@ -17,7 +17,6 @@
 NSString *const kConnectionsContainerViewSegue = @"connectionsContainerViewSegue";
 NSString *const kInfoContainerViewSegue = @"infoContainerViewSegue";
 
-
 @interface MPKViewController ()<MCTransceiverDelegate, MPKPeerInfoViewDelegate>
 @property (strong, nonatomic, readonly) MPKConnectionsTableViewController *connectionsVC;
 @property (strong, nonatomic, readonly) MPKPeerInfoViewController *peerInfoVC;
@@ -25,7 +24,6 @@ NSString *const kInfoContainerViewSegue = @"infoContainerViewSegue";
 @property (nonatomic, readonly) MCTransceiverMode mode;
 @property (nonatomic) BOOL didFindPeer;
 
-// Outlets
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @end
 
