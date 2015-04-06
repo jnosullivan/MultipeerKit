@@ -1,5 +1,6 @@
 Documentation
 -------------------------
+****
 
 ###### Quick Setup
 
@@ -9,6 +10,8 @@ Documentation
 
 3) Locate the built MultipeerKit file and add it to your project. Lastly, link the framework in the build setting and 
 included the header file MultipeerKit in your project prefix. 
+
+****
 
 ###### Quick Start
 
@@ -65,23 +68,45 @@ NSString *const kInfoContainerViewSegue = @"infoContainerViewSegue";
 }
 </pre>
 
+****
+
 ###### Delegate Methods
+As the transceiver is running the data is receiver or changes in state of peers of others connect or around will com through the delegate methods.  
+
+If the transceiver detects a peer around you sharing the same id, the transceiver will trigger this method and pass in the user information.
 
 <pre>
 -(void)didFindPeer:(MCPeerID *)peerID
 </pre>
+
+If the transceiver loses a peer around you sharing the same id, the transceiver will trigger this method and pass in the user information so you may remove it from your interface and array of active peers.
+
 <pre>
 -(void)didLosePeer:(MCPeerID *)peerID
 </pre>
+
+If the transceiver detects a peer requesting a recieve inviation the transceiver will trigger this method and peer info to accept or reject it.
+
 <pre>
 -(void)didReceiveInvitationFromPeer:(MCPeerID *)peerID
 </pre>
+
+If the transceiver connect to a peer then this method is trigged and the peer's info is passed into the view controller.
+
 <pre>
 -(void)didConnectToPeer:(MCPeerID *)peerID
 </pre>
+
+If the transceiver disconnect to a peer then this method is trigged and the peer's info is passed into the view controller.
+
 <pre>
 -(void)didDisconnectFromPeer:(MCPeerID *)peerID
 </pre>
+
+If the transceiver get data from a peer then this method is trigged and the peer's info is passed into the view controller along with the data that the peer sent.
+
 <pre>
 -(void)didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 </pre>
+
+****
