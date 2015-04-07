@@ -1,8 +1,7 @@
-Documentation
+# Documentation
 -------------------------
-****
 
-###### Quick Setup
+## Quick Setup
 
 1) Download or Clone the code.
 
@@ -13,7 +12,7 @@ included the header file MultipeerKit in your project prefix.
 
 ****
 
-###### Quick Start
+## Quick Start
 
 1) Make sure you import the MultipeerKit header files.
 
@@ -70,7 +69,7 @@ NSString *const kInfoContainerViewSegue = @"infoContainerViewSegue";
 
 ****
 
-###### Delegate Methods
+## Delegate Methods
 As the transceiver is running the data is receiver or changes in state of peers of others connect or around will com through the delegate methods.  
 
 If the transceiver detects a peer around you sharing the same id, the transceiver will trigger this method and pass in the user information.
@@ -108,5 +107,52 @@ If the transceiver get data from a peer then this method is trigged and the peer
 <pre>
 -(void)didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 </pre>
+
+****
+
+## Additional Methods
+
+This triggers the transceiver to start advertising that is available to connect too.
+<pre>
+[self.transceiver startAdvertising];
+</pre>
+
+This triggers the transceiver to stop advertising that is available to connect too.
+<pre>
+[self.transceiver stopAdvertising];
+</pre>
+
+This triggers the transceiver to start browsering for peers.
+<pre>
+[self.transceiver startBrowsing];
+</pre>
+
+This triggers the transceiver to stop browsering for peers.
+<pre>
+[self.transceiver stopBrowsing];
+</pre>
+This triggers the transceiver to disconnect.
+<pre>
+[self.transceiver disconnect];
+</pre>
+This returns a nsarray of connected peers.
+<pre>
+NSArray *ar = [self.transceiver connectedPeers];
+</pre>
+
+****
+
+## MCTransceiverMode
+
+###### MCTransceiverModeUnknown
+
+The state of the transceiver is not known.
+
+###### MCTransceiverModeAdvertiser
+
+The state of the transceiver is in advertisering mode.
+
+###### MCTransceiverModeBrowser
+The state of the transceiver is browsering mode.
 
 ****
