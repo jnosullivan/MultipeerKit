@@ -12,7 +12,7 @@ included the header file MultipeerKit in your project prefix.
 
 ****
 
-## Quick Start
+## Quick Start 
 
 1) Make sure you import the MultipeerKit header files.
 
